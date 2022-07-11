@@ -7,16 +7,17 @@ const ingredients = [
   "Condiments",
 ];
 
-const listEl = document.querySelector("#ingredients");
+const list = document.querySelector("#ingredients");
 
-const items = ingredients.map((ingredient) => {
-  const itemEl = document.createElement("li");
-  itemEl.textContent = ingredient;
-  itemEl.classList.add("item");
+function makeArreyOfItems(arr) {
+  return arr.map((ingredient) => {
+    const item = document.createElement("li");
+    item.textContent = ingredient;
+    item.classList.add("item");
 
-  return itemEl;
-});
+    return item;
+  });
+}
+const arreyOfItems = makeArreyOfItems(ingredients);
 
-// console.log(items);
-
-listEl.append(...items);
+list.append(...arreyOfItems);

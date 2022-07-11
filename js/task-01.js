@@ -1,16 +1,8 @@
-//1
-function getNumberOfCategories(selector) {
-  const categoriesEl = document.querySelectorAll(selector);
-  return `Number of categories: ${categoriesEl.length}`;
-}
+const list = document.querySelector("#categories");
+const children = list.children;
+console.log(`Number of categories: ${children.length}`);
 
-const result = getNumberOfCategories(".item");
-console.log(result);
-
-//2
-const listEl = document.querySelectorAll("#categories ul");
-
-listEl.forEach((element) => {
-  console.log(`Category: ${element.previousElementSibling.textContent}`);
-  console.log(`Elements: ${element.children.length}`);
+[...children].forEach((el) => {
+  console.log(`Category: ${el.children[0].textContent}`);
+  console.log(`Elements: ${el.children[1].children.length}`);
 });

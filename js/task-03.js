@@ -23,6 +23,6 @@ const makeGalleryItemMarkup = ({ url, alt }) => {
 
 const makeGalleryItems = images.map(makeGalleryItemMarkup).join("");
 
-const listEl = document.querySelector(".gallery");
+const list = document.querySelector(".gallery");
 
-listEl.insertAdjacentHTML("afterbegin", makeGalleryItems);
+list.insertAdjacentHTML("afterbegin", makeGalleryItems);
